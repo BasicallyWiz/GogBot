@@ -1,5 +1,5 @@
 # GogBot
- Unofficial Gog Discord bot
+The Semi-official Gogcord bot.
  
 
 ## Invite Link:
