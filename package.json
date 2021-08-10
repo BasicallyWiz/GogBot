@@ -1,0 +1,31 @@
+{
+  "name": "gogbot",
+  "version": "1.0.0",
+  "description": "An unofficial Discord bot for Gogcord",
+  "main": "gogbot.js",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "nodemon": "^2.0.7",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node gogbot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GogBot"
+  },
+  "keywords": [
+    "gog",
+    "monkey",
+    "monke",
+    "discord",
+    "bot"
+  ],
+  "author": "basicallywiz#0117",
+  "contributors": [
+    
+  ],
+  "license": "AGPL-3.0"
+}
