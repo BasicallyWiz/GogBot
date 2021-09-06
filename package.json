@@ -4,13 +4,14 @@
   "description": "An unofficial Discord bot for Gogcord",
   "main": "gogbot.js",
   "dependencies": {
-    "discord.js": "^12.5.3",
-    "nodemon": "^2.0.7",
+    "discord.js": "^13.1.0",
+    "nodemon": "^2.0.12",
+    "npm-check-updates": "^11.8.3",
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node gogbot"
+    "test": "node startup"
   },
   "repository": {
     "type": "git",
@@ -24,8 +25,6 @@
     "bot"
   ],
   "author": "basicallywiz#0117",
-  "contributors": [
-    
-  ],
+  "contributors": [],
   "license": "AGPL-3.0"
 }
