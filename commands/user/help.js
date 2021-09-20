@@ -57,6 +57,7 @@ function userHelp(msg, client) {
 	embed.color = msg.member.displayColor;
 	embed.author = msg.member.displayName;
 	embed.title = "GogBot Help Menu";
+	//embed.url = "https://github.com/BasicallyWiz/GogBot/";
 	//embed.description = "Description";
 
 	for (var i = 0; i < commandHelpNames.length; i++) {
