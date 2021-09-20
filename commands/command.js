@@ -25,22 +25,33 @@ module.exports.gogCommand = class {
 	responds_to = "new_command";
 	allow_https = false;
 	require_prefix = true;
+	is_priority = false;
 
 	customCheck(msg, client) {
+		var thing1 = false;
 		if (msg.channel.name.toLowerCase().startsWith("g")) {
 			msg.channel.send("This command is executing a custom check. This custom check checks that this message is in a channel of which's name starts with 'g', and no longer depends on any other factors. When changing this, please make sure to use `executeFuction()` instead of directly going to `commandCode()` to avoid re-typing error handling code. :)");
-			this.executeCommand(msg, client);
+			thing1 = this.executeCommand(msg, client);
+			if (thing1 === false) {
+				return false;
+			}
+			else {
+				return true;
+			}
 		}
 	}
 
 	executeCommand(msg, client) {
 		try {
+			var thing2 = false;
 			if (!msg || !client) { console.log("Oi, mate. You forgot to include the message /or client. Reference your code with this: `executeCommand(msg, client);`"); }
-			this.commandCode(msg, client);
+			thing2 = this.commandCode(msg, client);
+			if (thing2 == true) { return true; }
 		} catch (err) { msg.channel.send(`We've ran into a problem. Please send this to the bot owner.\nMessage: ${msg.content}\n${err}`); }
 	}
 
 	commandCode(msg, client) {
 		msg.reply(`Hello, ${msg.author.name}! This command has yet to be made!`);
+		return true;
 	}
 }

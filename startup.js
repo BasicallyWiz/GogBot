@@ -12,6 +12,11 @@ client.on("messageCreate", msg => {
 	handleCommands(msg, client);
 });
 
+client.on('interactionCreate', interaction => {
+	console.log(interaction);
+	interaction.reply(`You've chosen ${interaction.values}`);
+});
+
 cacheCommands();
 
 client.login(fs.readFileSync('./gogbot.token', 'utf8').toString());

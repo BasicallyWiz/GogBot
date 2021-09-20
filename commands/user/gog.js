@@ -4,7 +4,7 @@ const command = new gogCommand();
 
 command.name = "gog";
 command.description = "Reacts with gog emote";
-command.respods_to = "gog";
+command.responds_to = "gog";
 command.require_prefix = false;
 
 command.commandCode = function (msg, client) {

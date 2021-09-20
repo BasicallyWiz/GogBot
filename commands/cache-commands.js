@@ -13,7 +13,7 @@ module.exports.cacheCommands = function () {
 				for (let j = 0; j < tempFileBuffer.length; j++) {
 
 					const commandSource = require(`./${folders[i]}/${tempFileBuffer[j]}`);
-					const commandToCache = { name: commandSource.command.name, description: commandSource.command.description, command_level: commandSource.command.command_level, special_message_check: commandSource.command.special_message_check, responds_to: commandSource.command.respods_to, source: `./${folders[i]}/${tempFileBuffer[j]}`, required_perms: commandSource.command.permission_required, requires_prefix: commandSource.command.require_prefix }
+					const commandToCache = { name: commandSource.command.name, description: commandSource.command.description, command_level: commandSource.command.command_level, special_message_check: commandSource.command.special_message_check, responds_to: commandSource.command.responds_to, source: `./${folders[i]}/${tempFileBuffer[j]}`, required_perms: commandSource.command.permission_required, requires_prefix: commandSource.command.require_prefix, is_priority: commandSource.command.is_priority }
 
 					commandsToCache[fileCacheLengthBuffer + j] = commandToCache;
 				}

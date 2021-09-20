@@ -4,7 +4,7 @@ const command = new gogCommand();
 
 command.name = "test";
 command.description = "A command to test if major components of the bot are functioning.";
-command.respods_to = "test";
+command.responds_to = "test";
 command.command_level = 2;
 
 

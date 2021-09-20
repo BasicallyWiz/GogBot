@@ -1,8 +1,8 @@
 {
   "name": "gogbot",
   "version": "1.0.0",
-  "description": "An unofficial Discord bot for Gogcord",
-  "main": "gogbot.js",
+  "description": "The official bot entirely dedicated to Gogcord",
+  "main": "startup.js",
   "dependencies": {
     "discord.js": "^13.1.0",
     "nodemon": "^2.0.12",
@@ -15,14 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GogBot"
+    "url": "https://github.com/BasicallyWiz/GogBot"
   },
   "keywords": [
     "gog",
     "monkey",
     "monke",
     "discord",
-    "bot"
+    "bot",
+    "gogcord"
   ],
   "author": "basicallywiz#0117",
   "contributors": [],
