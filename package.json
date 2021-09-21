@@ -4,12 +4,13 @@
   "description": "The official bot entirely dedicated to Gogcord",
   "main": "startup.js",
   "dependencies": {
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "discord-api-types": "^0.23.1",
     "discord.js": "^13.1.0",
     "nodemon": "^2.0.12",
     "npm-check-updates": "^11.8.3",
     "xmlhttprequest": "^1.8.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "node startup"
   },
