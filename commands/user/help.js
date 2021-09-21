@@ -123,5 +123,5 @@ function ownerHelp(msg, client) {
 
 	msg.channel.send({ embeds: [embed] });
 }
-
+  
 module.exports.command = command;
