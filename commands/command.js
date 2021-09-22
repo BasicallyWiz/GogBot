@@ -26,6 +26,7 @@ module.exports.gogCommand = class {
 	allow_https = false;
 	require_prefix = true;
 	is_priority = false;
+	accepts_interaction = false;
 
 	customCheck(msg, client) {
 		var thing1 = false;
@@ -53,5 +54,9 @@ module.exports.gogCommand = class {
 	commandCode(msg, client) {
 		msg.reply(`Hello, ${msg.author.name}! This command has yet to be made!`);
 		return true;
+	}
+
+	interaction(interaction) {
+		
 	}
 }
