@@ -1,4 +1,4 @@
-module.exports.handleInteractions = function (interaction) {
+module.exports.handleInteractions = function (interaction, client) {
 	const fs = require('fs');
 	
 	console.log(interaction);
@@ -13,7 +13,7 @@ module.exports.handleInteractions = function (interaction) {
 
 			const command = require(indexParsed.commands[i].source);
 
-			command.command.executeCommand();
+			command.command.interaction(interaction, client);
 		}
 
 		if (interaction.commandName == indexParsed.commands[i].responds_to) {
@@ -21,7 +21,7 @@ module.exports.handleInteractions = function (interaction) {
 
 			const command = require(indexParsed.commands[i].source);
 
-			command.command.executeCommand();
+			command.command.interaction(interaction, client);
 		}
 	}
 }

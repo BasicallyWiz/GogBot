@@ -56,7 +56,12 @@ module.exports.gogCommand = class {
 		return true;
 	}
 
-	interaction(interaction) {
-		
+	interaction(interaction, client) {
+		const channel = client.channels.fetch(interaction.channelId);
+
+		interaction.reply({
+			constent: "cock",
+			type: 19
+		});
 	}
 }

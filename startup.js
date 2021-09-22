@@ -36,16 +36,9 @@ client.on("messageCreate", msg => {
 });
 
 client.on('interactionCreate', interaction => {
-	handleInteractions(interaction);
+	handleInteractions(interaction, client);
 });
 
 cacheCommands();
-
-//#region Slash Command initialization
-
-
-
-
-//#endregion
 
 client.login(token);
