@@ -60,7 +60,7 @@ module.exports.gogCommand = class {
 		const channel = client.channels.fetch(interaction.channelId);
 
 		interaction.reply({
-			constent: "cock",
+			content: "cock",
 			type: 19
 		});
 	}

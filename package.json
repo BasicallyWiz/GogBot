@@ -5,8 +5,12 @@
   "main": "startup.js",
   "dependencies": {
     "@discordjs/rest": "^0.1.0-canary.0",
+    "cors": "^2.8.5",
+    "dialogflow": "^4.0.3",
     "discord-api-types": "^0.23.1",
     "discord.js": "^13.1.0",
+    "firebase-admin": "^9.11.1",
+    "firebase-functions": "^3.15.7",
     "nodemon": "^2.0.12",
     "npm-check-updates": "^11.8.3",
     "xmlhttprequest": "^1.8.0"
