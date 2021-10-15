@@ -2,10 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\commands",
-    "\\commands\\owner",
-    "\\commands\\user",
-    "\\modules"
+    "\\commands\\owner"
   ],
-  "SelectedNode": "\\commands\\user\\beanis.js",
   "PreviewInSolutionExplorer": false
 }

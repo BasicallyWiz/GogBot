@@ -1,5 +1,6 @@
 {
   "name": "gogbot",
+  "bin": "startup.js",
   "version": "1.0.0",
   "description": "The official bot entirely dedicated to Gogcord",
   "main": "startup.js",
@@ -13,10 +14,12 @@
     "firebase-functions": "^3.15.7",
     "nodemon": "^2.0.12",
     "npm-check-updates": "^11.8.3",
-    "xmlhttprequest": "^1.8.0"
+    "xmlhttprequest": "^1.8.0",
+    "pkg": "^5.3.3"
   },
   "scripts": {
-    "test": "node startup"
+    "start": "node startup",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -30,7 +33,7 @@
     "bot",
     "gogcord"
   ],
-  "author": "basicallywiz#0117",
+  "author": "basicallywiz",
   "contributors": [],
   "license": "AGPL-3.0"
 }

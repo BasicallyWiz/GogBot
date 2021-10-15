@@ -13,6 +13,29 @@ command.description = "Command used to bring up the help dialogue.";
 command.responds_to = "help";
 command.require_prefix = true;
 command.special_message_check = true;
+command.accepts_interaction = true;
+command.interaction_args = [
+	{
+		"name": "rank",
+		"description": "The type of animal",
+		"type": 3,
+		"required": true,
+		"choices": [
+			{
+				"name": "User",
+				"value": "rank_user"
+			},
+			{
+				"name": "Mod",
+				"value": "rank_mod"
+			},
+			{
+				"name": "Owner",
+				"value": "rank_owner"
+			}
+		]
+	}
+];
 //#endregion
 
 command.customCheck = function (msg, client) {
@@ -33,6 +56,79 @@ command.customCheck = function (msg, client) {
 		ownerHelp(msg, client);
 		return true;
 	}
+}
+
+command.interaction = function (interaction, client) {
+
+	const commandJson = fs.readFileSync("./commands/commandIndex.json");
+	const parsedJson = JSON.parse(commandJson);
+
+	let commandHelpNames = [];
+	let modBugWorkaround = 0;
+
+	for (var i = 0; i < parsedJson.commands.length; i++) {
+
+		switch (interaction.options.get("rank", true).value) {
+			case "rank_user":
+				{
+					console.log("rank user");
+					if (parsedJson.commands[i].command_level == 0 && parsedJson.commands[i].accepts_interaction) {
+						commandHelpNames[commandHelpNames.length] = `${commandHelpNames.length + 1}. **${parsedJson.commands[i].responds_to}** | ${parsedJson.commands[i].description}`;
+						//console.log(commandHelpNames);
+					}
+					else if (parsedJson.commands[i].command_level == 0) {
+						commandHelpNames[commandHelpNames.length] = `${commandHelpNames.length + 1}. **${determinePrefix(parsedJson.commands[i].requires_prefix, parsedJson.commands[i].command_level)}${parsedJson.commands[i].responds_to}** | ${parsedJson.commands[i].description}`;
+					}
+				}
+				break;
+
+			case "rank_mod":
+				{
+					modBugWorkaround = 1;
+					if (parsedJson.commands[i].command_level == 1 && parsedJson.commands[i].accepts_interaction) {
+						commandHelpNames[commandHelpNames.length] = `${commandHelpNames.length + 1}. **${parsedJson.commands[i].responds_to}** | ${parsedJson.commands[i].description}`;
+						//console.log(commandHelpNames);
+					}
+					else if (parsedJson.commands[i].command_level == 1) {
+						commandHelpNames[commandHelpNames.length] = `${commandHelpNames.length + 1}. **${determinePrefix(parsedJson.commands[i].requires_prefix, parsedJson.commands[i].command_level)}${parsedJson.commands[i].responds_to}** | ${parsedJson.commands[i].description}`;
+					}
+				}
+				break;
+
+			case "rank_owner":
+				{
+					if (parsedJson.commands[i].command_level == 2 && parsedJson.commands[i].accepts_interaction) {
+						commandHelpNames[commandHelpNames.length] = `${commandHelpNames.length + 1}. **${parsedJson.commands[i].responds_to}** | ${parsedJson.commands[i].description}`;
+						//console.log(commandHelpNames);
+					}
+					else if (parsedJson.commands[i].command_level == 2) {
+						commandHelpNames[commandHelpNames.length] = `${commandHelpNames.length + 1}. **${determinePrefix(parsedJson.commands[i].requires_prefix, parsedJson.commands[i].command_level)}${parsedJson.commands[i].responds_to}** | ${parsedJson.commands[i].description}`;
+					}
+				}
+				break;
+		}
+		
+	}
+
+	const embed = new Discord.MessageEmbed();
+
+	embed.fields = [{ name: "Commands:", value: "", inline: false }];
+
+	embed.author = interaction.member.user.username;
+	embed.title = "GogBot Help Menu";
+
+	console.log(modBugWorkaround);
+	if (modBugWorkaround == 1) {
+		console.log("It sure is empty.");
+		commandHelpNames = ["Looks", "Like", "There", "Are", "No", "Commands", "For", "This", "Rank."];
+	}
+	for (var i = 0; i < commandHelpNames.length; i++) {
+
+		embed.fields[0].value = embed.fields[0].value + commandHelpNames[i] + "\n";
+	}
+
+
+	interaction.reply({ embeds: [embed] });
 }
 
 function userHelp(msg, client) {

@@ -1,27 +1,60 @@
-module.exports.handleInteractions = function (interaction, client) {
-	const fs = require('fs');
-	
-	console.log(interaction);
+module.exports.handleInteractions = {
 
-	const indexJson = fs.readFileSync("./commands/commandIndex.json");
-	const indexParsed = JSON.parse(indexJson);
-	const succeeded = false;
+	handle: function(interaction, client) {
+		const fs = require('fs');
 
-	for (var i = 0; i < indexParsed.commands.length; i++) {
+		console.log(interaction);
 
-		if (interaction.customId == indexParsed.commands[i].responds_to) {
+		const indexJson = fs.readFileSync("./commands/commandIndex.json");
+		const indexParsed = JSON.parse(indexJson);
+		const succeeded = false;
 
-			const command = require(indexParsed.commands[i].source);
+		for (var i = 0; i < indexParsed.commands.length; i++) {
 
-			command.command.interaction(interaction, client);
+			if (interaction.commandName == indexParsed.commands[i].responds_to) {
+
+				const command = require(indexParsed.commands[i].source);
+
+				command.command.interaction(interaction, client);
+			}
+		}
+	},
+
+	setup: function (client) {
+		//	Imports
+		const fs = require('fs');
+		const token = fs.readFileSync('./gogbot.token', 'utf8').toString();
+		const { REST } = require('@discordjs/rest');
+		const { Routes } = require('discord-api-types/v9');
+		const indexJson = fs.readFileSync("./commands/commandIndex.json");
+			const indexParsed = JSON.parse(indexJson);
+
+		//	Actual process
+		var commands = [{ name: "", description: "", options: []}];
+		var commandCount = 0;
+		for (let i = 0; i < indexParsed.commands.length; i++) {
+			if (indexParsed.commands[i].accepts_interaction) {
+				commands[commandCount] = { name: indexParsed.commands[i].responds_to, description: indexParsed.commands[i].description, options: indexParsed.commands[i].interaction_args };
+
+				commandCount++;
+			}
 		}
 
-		if (interaction.commandName == indexParsed.commands[i].responds_to) {
+		const rest = new REST({ version: '9' }).setToken(token);
 
+		(async () => {
+			try {
+				console.log('Started refreshing application (/) commands.');
 
-			const command = require(indexParsed.commands[i].source);
+				await rest.put(
+					Routes.applicationGuildCommands(client.user.id, "603162720199639061"),
+					{ body: commands },
+				);
 
-			command.command.interaction(interaction, client);
-		}
+				console.log('Successfully reloaded application (/) commands.');
+			} catch (error) {
+				console.error(error);
+			}
+		})();
 	}
 }

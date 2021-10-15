@@ -1,4 +1,4 @@
-module.exports.evalPerms = function (msg, requirements) {
+module.exports.evalPerms = function (msg, requirements, isInteraction) {
 
 	if (requirements.length == 0) {
 		console.log("requirements empty");

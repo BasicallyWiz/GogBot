@@ -9,8 +9,10 @@ module.exports.gogCommand = class {
  * @param {string} responds_to One or more messages the command will respond to. Set to "everythings!" for the command to respond to all messages.
  * @param {boolean} allow_https A bool to describe if a command can be used via http message.
  * @param {boolean} require_prefix A bool that determines if the command will only respond if the prefix comes before it.
- *
+ * @param {boolean} is_priority Bool that determines if this command is to be checked first, and if true, stops command checking.
+ * @param {boolean} accepts_interaction Bool that determines if the command should be considered while checking interactions.
  * @param {Function} customCheck The new check for the current command. Requires "special_message_check" to be true.
+ * @param {Function} interaction The processor for when this command is used as a slash command.
 	*/
 
 	constructor() {
@@ -27,6 +29,8 @@ module.exports.gogCommand = class {
 	require_prefix = true;
 	is_priority = false;
 	accepts_interaction = false;
+	interaction_args = [];
+	message_components = [];
 
 	customCheck(msg, client) {
 		var thing1 = false;
@@ -57,11 +61,9 @@ module.exports.gogCommand = class {
 	}
 
 	interaction(interaction, client) {
-		const channel = client.channels.fetch(interaction.channelId);
 
 		interaction.reply({
-			content: "cock",
-			type: 19
+			content: "Default Behaviour."
 		});
 	}
 }
