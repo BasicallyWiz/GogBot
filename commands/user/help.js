@@ -84,6 +84,9 @@ command.interaction = function (interaction, client) {
 
 			case "rank_mod":
 				{
+					interaction.reply({ content: "To avoid crashing, this command has been disabled, as gogbot has no Admin commands.", etherial: true });
+					return true;
+					/*
 					modBugWorkaround = 1;
 					if (parsedJson.commands[i].command_level == 1 && parsedJson.commands[i].accepts_interaction) {
 						commandHelpNames[commandHelpNames.length] = `${commandHelpNames.length + 1}. **${parsedJson.commands[i].responds_to}** | ${parsedJson.commands[i].description}`;
@@ -92,6 +95,7 @@ command.interaction = function (interaction, client) {
 					else if (parsedJson.commands[i].command_level == 1) {
 						commandHelpNames[commandHelpNames.length] = `${commandHelpNames.length + 1}. **${determinePrefix(parsedJson.commands[i].requires_prefix, parsedJson.commands[i].command_level)}${parsedJson.commands[i].responds_to}** | ${parsedJson.commands[i].description}`;
 					}
+					*/
 				}
 				break;
 
@@ -117,11 +121,6 @@ command.interaction = function (interaction, client) {
 	embed.author = interaction.member.user.username;
 	embed.title = "GogBot Help Menu";
 
-	console.log(modBugWorkaround);
-	if (modBugWorkaround == 1) {
-		console.log("It sure is empty.");
-		commandHelpNames = ["Looks", "Like", "There", "Are", "No", "Commands", "For", "This", "Rank."];
-	}
 	for (var i = 0; i < commandHelpNames.length; i++) {
 
 		embed.fields[0].value = embed.fields[0].value + commandHelpNames[i] + "\n";
@@ -165,6 +164,9 @@ function userHelp(msg, client) {
 }
 
 function adminHelp(msg, client) {
+	msg.reply({ content: "There are no admin commands", etherial: true });
+	return true;
+	/*
 	const commandJson = fs.readFileSync("./commands/commandIndex.json");
 	const parsedJson = JSON.parse(commandJson);
 
@@ -180,7 +182,7 @@ function adminHelp(msg, client) {
 
 	const embed = new Discord.MessageEmbed();
 
-	embed.fields = [/*{ name: "name", value: "yeet", inline: true }, { name: "", value: "value", inline: true },*/ { name: "Commands:", value: "", inline: false }];
+	embed.fields = [{ name: "Commands:", value: "", inline: false }];
 
 	embed.title = "GogBot Help Menu";
 
@@ -190,6 +192,7 @@ function adminHelp(msg, client) {
 	}
 
 	msg.channel.send({ embeds: [embed] });
+	*/
 }
 
 function ownerHelp(msg, client) {
