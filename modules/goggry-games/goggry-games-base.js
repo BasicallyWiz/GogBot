@@ -3,5 +3,8 @@ module.exports.goggryGames = {
     if (isInteraction) {
 
     }
+    else {
+
+    }
   }
 }

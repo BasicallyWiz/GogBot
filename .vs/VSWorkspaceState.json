@@ -2,7 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\commands",
-    "\\commands\\owner"
+    "\\commands\\user",
+    "\\modules",
+    "\\modules\\goggry-games"
   ],
   "PreviewInSolutionExplorer": false
 }

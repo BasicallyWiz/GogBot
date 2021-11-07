@@ -46,10 +46,17 @@ module.exports.handleInteractions = {
 			try {
 				console.log('Started refreshing application (/) commands.');
 
-				await rest.put(
-					Routes.applicationGuildCommands(client.user.id, "603162720199639061"),
-					{ body: commands },
-				);
+				if (client.id == "851521246457495622") {
+					await rest.put(
+						Routes.applicationCommands(client.user.id, "603162720199639061"),
+						{ body: commands },
+					);
+				} else if (client.id == "876318869294317579") {
+					await rest.put(
+						Routes.applicationGuildCommands(client.user.id, "603162720199639061"),
+						{ body: commands },
+					);
+        }
 
 				console.log('Successfully reloaded application (/) commands.');
 			} catch (error) {

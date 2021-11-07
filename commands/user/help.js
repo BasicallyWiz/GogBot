@@ -140,7 +140,7 @@ function userHelp(msg, client) {
 
 	for (var i = 0; i < parsedJson.commands.length; i++) {
 
-		if (parsedJson.commands[i].command_level == 0) {
+		if (parsedJson.commands[i].command_level == 0 && !parsedJson.commands[i].interaction_only) {
 			commandHelpNames[commandHelpNames.length] = `${commandHelpNames.length + 1}. **${determinePrefix(parsedJson.commands[i].requires_prefix, parsedJson.commands[i].command_level)}${parsedJson.commands[i].responds_to}** | ${parsedJson.commands[i].description}`;
 		}
 	}
@@ -175,7 +175,7 @@ function adminHelp(msg, client) {
 
 	for (var i = 0; i < parsedJson.commands.length; i++) {
 
-		if (parsedJson.commands[i].command_level == 1) {
+		if (parsedJson.commands[i].command_level == 1 && parsedJson.commands[i].interaction_only == false) {
 			commandHelpNames[commandHelpNames.length] = `**${determinePrefix(parsedJson.commands[i].requires_prefix, parsedJson.commands[i].command_level)}${parsedJson.commands[i].responds_to}** | ${parsedJson.commands[i].description}`;
 		}
 	}
@@ -204,7 +204,7 @@ function ownerHelp(msg, client) {
 
 	for (var i = 0; i < parsedJson.commands.length; i++) {
 
-		if (parsedJson.commands[i].command_level == 2) {
+		if (parsedJson.commands[i].command_level == 2 && parsedJson.commands[i].interaction_only == false) {
 			commandHelpNames[commandHelpNames.length] = `**${determinePrefix(parsedJson.commands[i].requires_prefix, parsedJson.commands[i].command_level)}${parsedJson.commands[i].responds_to}** | ${parsedJson.commands[i].description}`;
 		}
 	}

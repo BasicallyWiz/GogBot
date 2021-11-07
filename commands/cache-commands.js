@@ -24,7 +24,8 @@ module.exports.cacheCommands = function () {
 						requires_prefix: commandSource.command.require_prefix,
 						is_priority: commandSource.command.is_priority,
 						accepts_interaction: commandSource.command.accepts_interaction,
-						interaction_args: commandSource.command.interaction_args
+						interaction_args: commandSource.command.interaction_args,
+						interaction_only: commandSource.command.interaction_only
 					}
 
 					commandsToCache[fileCacheLengthBuffer + j] = commandToCache;

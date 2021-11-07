@@ -31,6 +31,7 @@ module.exports.gogCommand = class {
 	accepts_interaction = false;
 	interaction_args = [];
 	message_components = [];
+	interaction_only = false;
 
 	customCheck(msg, client) {
 		var thing1 = false;
