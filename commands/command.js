@@ -16,7 +16,7 @@ module.exports.gogCommand = class {
 	*/
 
 	constructor() {
-
+		
 	}
 
 	name = "New command!";

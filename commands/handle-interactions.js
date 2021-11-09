@@ -44,14 +44,14 @@ module.exports.handleInteractions = {
 
 		(async () => {
 			try {
-				console.log('Started refreshing application (/) commands.');
+				console.log(`Started refreshing application (/) commands.`);
 
-				if (client.id == "851521246457495622") {
+				if (client.user.id == "851521246457495622") {
 					await rest.put(
 						Routes.applicationCommands(client.user.id, "603162720199639061"),
 						{ body: commands },
 					);
-				} else if (client.id == "876318869294317579") {
+				} else if (client.user.id == "876318869294317579") {
 					await rest.put(
 						Routes.applicationGuildCommands(client.user.id, "603162720199639061"),
 						{ body: commands },
