@@ -1,0 +1,7 @@
+#Gogbot access token
+gogbot.token
+
+commands/commandIndex.json
+
+# Firebase account key
+firebase-key.json

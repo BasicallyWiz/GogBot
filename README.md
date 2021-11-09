@@ -1,9 +1,7 @@
 # GogBot
 The Semi-official Gogcord bot.
  
-
-## Invite Link:
-https://discord.com/api/oauth2/authorize?client_id=851521246457495622&permissions=8&scope=bot%20applications.commands
+[Invite Me!](https://discord.com/api/oauth2/authorize?client_id=876318869294317579&permissions=8&scope=bot&#32;applications.commands)
 
 [Join gogcord!](https://discord.gg/gogcord)
 

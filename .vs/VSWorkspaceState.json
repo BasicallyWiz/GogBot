@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\commands",
-    "\\commands\\extra",
-    "\\gogbot-modules",
-    "\\json-files"
+    "\\commands\\owner",
+    "\\modules",
+    "\\modules\\goggry-games"
   ],
+  "SelectedNode": "\\commands\\handle-interactions.js",
   "PreviewInSolutionExplorer": false
 }
