@@ -1,10 +1,11 @@
-module.exports.goggryGames = {
-  start: function (isInteraction, input, client) {
-    if (isInteraction) {
+module.exports.goggryGames = class GoggryGames {
+  constructor () {
 
-    }
-    else {
+  }
 
-    }
+  
+
+  start() {
+
   }
 }

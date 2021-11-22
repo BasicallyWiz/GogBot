@@ -10,10 +10,8 @@ command.accepts_interaction = true;
 command.interaction_only = true;
 
 command.interaction = function (interaction, client) {
-  //goggryGames.start(true, interaction, client);
-  interaction.reply({ content: "You tried, but the description sys it all. You should play Muck instead.", ephemeral: true });
+  const _gogGames = new goggryGames();
+  //interaction.reply({ content: "You tried, but the description sys it all. You should play Muck instead.", ephemeral: true });
 }
-
-
 
 module.exports.command = command;
