@@ -22,6 +22,4 @@ command.interaction = function (interaction, client) {
   //interaction.reply({ content: "You tried, but the description sys it all. You should play Muck instead.", ephemeral: true });
 }
 
-
-
 module.exports.command = command;
