@@ -71,7 +71,6 @@ command.interaction = function (interaction, client) {
 		switch (interaction.options.get("rank", true).value) {
 			case "rank_user":
 				{
-					console.log("rank user");
 					if (parsedJson.commands[i].command_level == 0 && parsedJson.commands[i].accepts_interaction) {
 						commandHelpNames[commandHelpNames.length] = `${commandHelpNames.length + 1}. **${parsedJson.commands[i].responds_to}** | ${parsedJson.commands[i].description}`;
 						//console.log(commandHelpNames);

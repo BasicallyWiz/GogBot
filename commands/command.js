@@ -1,6 +1,6 @@
 module.exports.gogCommand = class {
 
-	/**
+/**
  * @param {string} name The name of the command that'll be shown in help.
  * @param {string} description The description of the command.
  * @param {number} level A number corresponding with the level of prefix.
@@ -13,7 +13,7 @@ module.exports.gogCommand = class {
  * @param {boolean} accepts_interaction Bool that determines if the command should be considered while checking interactions.
  * @param {boolean} customCheck The new check for the current command. Requires "special_message_check" to be true.
  * @param {Function} interaction The processor for when this command is used as a slash command.
-	*/
+*/
 
 	constructor() {
 		

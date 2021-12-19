@@ -2,10 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\commands",
-    "\\commands\\owner",
+    "\\commands\\user",
     "\\modules",
-    "\\modules\\goggry-games"
+    "\\modules\\profiles"
   ],
-  "SelectedNode": "\\commands\\handle-interactions.js",
   "PreviewInSolutionExplorer": false
 }
