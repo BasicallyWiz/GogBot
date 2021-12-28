@@ -3,8 +3,9 @@
     "",
     "\\commands",
     "\\commands\\owner",
-    "\\commands\\user",
-    "\\modules"
+    "\\modules",
+    "\\modules\\goggry-games"
   ],
+  "SelectedNode": "\\commands\\handle-interactions.js",
   "PreviewInSolutionExplorer": false
 }

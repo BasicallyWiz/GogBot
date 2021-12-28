@@ -5,16 +5,18 @@ module.exports.gogCommand = class {
  * @param {string} description The description of the command.
  * @param {number} level A number corresponding with the level of prefix.
  * @param {string} permission_required An array of permissions required for a user to use this command. Leave empty for no requirement.
- * @param {boolean} special_message_check A bool to indicate if custom code should be run to check the command.
+ * @param {Function} special_message_check A bool to indicate if custom code should be run to check the command.
  * @param {string} responds_to One or more messages the command will respond to. Set to "everythings!" for the command to respond to all messages.
  * @param {boolean} allow_https A bool to describe if a command can be used via http message.
  * @param {boolean} require_prefix A bool that determines if the command will only respond if the prefix comes before it.
- *
- * @param {Function} customCheck The new check for the current command. Requires "special_message_check" to be true.
+ * @param {boolean} is_priority Bool that determines if this command is to be checked first, and if true, stops command checking.
+ * @param {boolean} accepts_interaction Bool that determines if the command should be considered while checking interactions.
+ * @param {boolean} customCheck The new check for the current command. Requires "special_message_check" to be true.
+ * @param {Function} interaction The processor for when this command is used as a slash command.
 	*/
 
 	constructor() {
-
+		
 	}
 
 	name = "New command!";
@@ -26,6 +28,10 @@ module.exports.gogCommand = class {
 	allow_https = false;
 	require_prefix = true;
 	is_priority = false;
+	accepts_interaction = false;
+	interaction_args = [];
+	message_components = [];
+	interaction_only = false;
 
 	customCheck(msg, client) {
 		var thing1 = false;
@@ -53,5 +59,12 @@ module.exports.gogCommand = class {
 	commandCode(msg, client) {
 		msg.reply(`Hello, ${msg.author.name}! This command has yet to be made!`);
 		return true;
+	}
+
+	interaction(interaction, client) {
+
+		interaction.reply({
+			content: "Default Behaviour."
+		});
 	}
 }

@@ -1,9 +1,9 @@
 # GogBot
-The Semi-official Gogcord bot.
+The officially official Gogcord bot.
  
-[Invite Me!](https://discord.com/api/oauth2/authorize?client_id=876318869294317579&permissions=8&scope=bot applications.commands)
+[Invite me to your server!](https://discord.com/api/oauth2/authorize?client_id=876318869294317579&permissions=8&scope=bot&#32;applications.commands)
 
-[Join gogcord!](https://discord.gg/gogcord)
+[Join Gogcord!](https://discord.gg/gogcord)
 
 
 ### Monkey Moments:
