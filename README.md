@@ -8,3 +8,6 @@ The Semi-official Gogcord bot.
 
 ### Monkey Moments:
 [Monkey Grills Fish and Arranges Flowers](https://www.dailymotion.com/embed/video/xldcec)
+
+
+More information: [[Main]]

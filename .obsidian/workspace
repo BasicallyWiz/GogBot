@@ -89,6 +89,15 @@
   },
   "active": "e5b3a546eddb2d5b",
   "lastOpenFiles": [
-    "README.md"
+    "README.md",
+    "_Markdown/Classes/Logger.md",
+    "_Markdown/Classes/GogBotClass.md",
+    "_Markdown/Documentation.md",
+    "_Markdown/Context-based-commands.md",
+    "_Markdown/Namespaces/GogBot.Modules.md",
+    "_Markdown/Namespaces/GogBot.md",
+    "_Markdown/Main.md",
+    "Documentation^.md",
+    "node_modules/got/node_modules/get-stream/readme.md"
   ]
 }
