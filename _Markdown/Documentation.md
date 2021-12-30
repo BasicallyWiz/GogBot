@@ -7,8 +7,21 @@ Knowledge reference for code used within GogBot.
 ### [[Documentation#Classes|Classes]]
 ---
 ## Namespaces
-- [[GogBot]]
+```query
+tag:Namespace -tag:Template -tag:DocUnfinished
+```
 
 ## Classes
-- GogBot
-- [[Logger]]
+```query
+tag:Class -tag:Template -tag:DocUnfinished
+```
+
+## Unfinished Documentation
+### Namepsaces
+```query
+tag:Namespace tag:DocUnfinished
+```
+### Classes
+```query
+tag:Class tag:DocUnfinished
+```

@@ -1,3 +1,6 @@
+---
+tags: [Namespace, GogBot]
+---
 # Gogbot (Namespace)
 The root namespace of the entire bot.
 
@@ -16,3 +19,4 @@ The root namespace of the entire bot.
 
 ---
 ## Classes
+[[GogBotClass|GogBot (Class)]]

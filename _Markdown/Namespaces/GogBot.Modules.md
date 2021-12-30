@@ -1,3 +1,6 @@
+---
+tags: [Namespace, GogBot]
+---
 # GogBot.Modules
 Child of [[GogBot]], containing general modules that will be used across the entire bot.
 

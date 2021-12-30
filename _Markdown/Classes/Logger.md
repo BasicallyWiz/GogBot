@@ -1,3 +1,8 @@
+---
+tags: [Class, GogBot/Markdown]
+aliases: [Logger, GogBot.Modules.Logger]
+---
+
 # Logger
 Class used for a large majority of debug and info logging.
 
@@ -52,5 +57,5 @@ The client argument is of [[Discord.WebSocket]]'s "WebsocketClient" type.
 The cmdException argument is of [[Discord.Commands]]'s "CommandException" type.
 
 ---
-## Contructor
+## Constructor
 The constructor of this class takes the [[Logger#client|client]] and [[Logger#cmdException|cmdException]] and sets both of those's .Log function to instead use the Logger's Log function.
